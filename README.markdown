@@ -11,7 +11,7 @@ Installation (OSX)
 
 Here's a quick guide to get this example up and running on your local OSX machine (if you can duplicate it for Windows, please share with us).
 
-**1) Install Node.JS and Socket.IO
+### 1) Install Node.JS and Socket.IO
 
 The first task is to get Node.js installed on your machine. The easiest way we found is to download [the file here] (https://sites.google.com/site/nodejsmacosx/) 
 
@@ -47,7 +47,7 @@ Also, just to make sure all's well, type this into the terminal:
 If you get a long list of commands, then you're all set to go. Otherwise, you'll need to dig deeper into documentations for installing node, and figure out what the issue was. A good place to start is [here] https://github.com/joyent/node/wiki/Installation
 
 
-**2) Make sure you're local server is running
+### 2) Make sure you're local server is running
 
 OSX comes standard with an Apache server. To activate it, head over to your System Preferences and choose Sharing. 
 
@@ -73,7 +73,7 @@ Changing the index.html file in that folder should affect what you see in the br
 If that's the case, you're ready for step 3.
 
 
-**3) Cloning this project to your local machine
+### 3) Cloning this project to your local machine
 
 Do you have Git installed on your machine? If not, then you're easiest path is to user the download button on the top of the page. Open up the zipped file, and copy the folder and its content into the "Sites" directory mentioned in step 2.
 
