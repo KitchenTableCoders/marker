@@ -5,7 +5,6 @@ This is code from a recent workshop on Node.js
 
 We forked a simple whiteboard app by [http://mrduncan.github.com/marker](http://mrduncan.github.com/marker), and added multiuser support via Node.js and socket.io 
 
-
 Installation (OSX)
 ==================
 
@@ -62,7 +61,7 @@ http://yourComputerName.westell.com/~yourUserName
 
 (yourComputerName & yourUserName are stand-ins for your actual computer and user name)
 
-Place the URL into your browser and make sure that you get a welcome screen (anything but an error page means you're probably ok).
+Place the URL into your browser and make sure that you get a welcome screen from Apple.
 
 This URL address typically points at your "Sites" folder, located in: 
 
@@ -79,5 +78,48 @@ Do you have Git installed on your machine? If not, then you're easiest path is t
 
 If you're familiar with Git, then clone this repo into a new folder in your "Sites" directory. 
 
+You should now have a folder called "marker" somewhere in your "Sites" folder.
 
- 
+
+### 4) Change the code to your local IP address
+
+Head over to index.html, edit it with a code edditor, and find this line: 
+
+    <script src="http://REPLACE_THIS_WITH_YOUR_SERVER_IP:8080/socket.io/socket.io.js"></script>
+    
+Change REPLACE_THIS_WITH_YOUR_SERVER_IP to your local IP address found at step two. Use the bottom one from the settings page - WITHOUT YOUR USER-NAME. The correct line should look something like this:
+
+    <script src="http://127.0.0.1:8080/socket.io/socket.io.js"></script>
+
+(Your numbers should look different. And sometimes Apple delegages a named-IP instead of these numbers. Either way .. choose the bottom one WITHOUT your user-name)
+
+Save the file. 
+
+
+### 5) Run the server
+
+Open up the terminal and navigate to the "marker" folder. Once there, start the Node.JS server like so: 
+
+    node whiteboard_server.js
+    
+If all's well, you should see something along these lines: 
+
+    - Your node instance does not have root privileges. This means that the flash XML policy file will be served inline instead of on port 843. This will slow down initial connections slightly.
+    - socket.io ready - accepting connections
+
+
+### 6) Run the clients
+
+Two test it with one machine, you'll need to open up two different browsers. To ensure compatilibty with latest browsers, open up Chrome and Safari (latest versions please.. make sure to update first). 
+
+In both, type in your local server address (from step 2), this time it's the one with the user name. Make sure to also add the path to your marker folder. It might look something like this: 
+
+    http://127.0.0.1:8080/apitaru/marker
+    
+(Your IP numbers and user name will differ)
+
+For extra fun, You can also type this address from other computers on your local WiFi network. 
+
+Take a quick look at your terminal window. It should indicate that two clients have joined the server. 
+
+Now draw in one browser, and upon releasing the mouse, the same drawing should appear in the other browser. 
